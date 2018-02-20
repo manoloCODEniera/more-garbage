@@ -35,24 +35,24 @@ public class Test_141 {
       
     String test6 = " int squareint (int k, int  ) , noarg(), circle(int  radius , char doink),box( int), cake(int,int )  ;" ;
     
-    String test9 = "int circle(int  radius  , char doink  );";
+    String test9 = "int circle(int  radius ,  char radius  );";
     
     String comma ="a,  ,a";
    
     boolean tester;
     
- //   tester = isFuncDec(test1);
- //   tester = isFuncDec(test2);
- //   tester = isFuncDec(test3);
- //   tester = isFuncDec(test4);
- //   tester = isFuncDec(test5);
+ //   tester = isValidFuncDec(test1);
+ //   tester = isValidFuncDec(test2);
+ //   tester = isValidFuncDec(test3);
+ //   tester = isValidFuncDec(test4);
+    tester = isValidFuncDec(test9);
     
-           tester = isValidFuncDec(test6);
+  //         tester = isValidFuncDec(test6);
    // tester = isValidParameters("int k");
        // tester = hasNoDoubleComma(comma);
 // tester = isValidFuncName("2whop");
  //    tester = isDataType(xd,0,2);
-  //  System.out.println(tester);
+    System.out.println(tester);
     //System.out.println(hey);
     
     return;
@@ -208,7 +208,7 @@ public class Test_141 {
       if(!continueFlag)
         return false;
       
-       System.out.println(funcName);
+     //  System.out.println(funcName);
       
       functionNames.add(funcName);
       
@@ -234,7 +234,7 @@ public class Test_141 {
       parameters = getParameters(bob);
       
       // need to find a way to catch double ,, or , , etc before splitting
-      //System.out.println(parameters);
+      System.out.println(parameters);
       
       continueFlag = hasNoDoubleComma(parameters);
     
@@ -263,9 +263,10 @@ public class Test_141 {
          
          if(parameter.contains(" ")){
           String paramName = getParameterName(parameter);
+          System.out.println(paramName);
           if(parameterList.contains(paramName))
                return false;
-           parameterList.add(parameter);
+           parameterList.add(paramName);
          }
       }
       
