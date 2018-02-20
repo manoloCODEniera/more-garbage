@@ -29,7 +29,7 @@ public class Test_141 {
     
     String test3 = "void hello(int);";
     
-    String test4 = "float hello(int);";
+    String test4 = "int gcd(int,int);";
     
     String test5 = "double hello(int);";
       
@@ -45,7 +45,7 @@ public class Test_141 {
  //   tester = isValidFuncDec(test2);
  //   tester = isValidFuncDec(test3);
  //   tester = isValidFuncDec(test4);
-    tester = isValidFuncDec(test9);
+    tester = isValidFuncDec(test4);
     
   //         tester = isValidFuncDec(test6);
    // tester = isValidParameters("int k");
@@ -277,13 +277,14 @@ public class Test_141 {
       chewSpace(bob);
  
       // at this point stringIndex points to (
+       System.out.println(bob.charAt(stringIndex));
       
-      stringIndex++;
-      
+      if(stringIndex!=bob.length()-1)
+       stringIndex++;
       chewSpace(bob);
       
       
-      //System.out.println(bob.charAt(stringIndex));
+      System.out.println(bob.charAt(stringIndex));
       
       // at this point stringIndex should point to next character after '(', expects comma or semicolon
       if(bob.charAt(stringIndex) == ';' || bob.charAt(stringIndex) == '{' )
